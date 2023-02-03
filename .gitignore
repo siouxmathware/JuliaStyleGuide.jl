@@ -1,0 +1,4 @@
+**/Manifest.toml
+
+# Ignore build of the docs
+docs/build
