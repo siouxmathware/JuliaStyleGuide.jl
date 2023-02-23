@@ -3,10 +3,10 @@ image: julia:latest
 pipelines:
   default:
     - step:
-	  name: Build documentation
-	  script:
-	    - cd docs/
-	    - julia --project "make.jl"
-	  artifacts:
-	    - docs/build/**
+	    name: Build documentation
+	    script:
+	      - cd docs/
+        - julia --project "make.jl"
+      artifacts:
+	      - docs/build/**
 	  
