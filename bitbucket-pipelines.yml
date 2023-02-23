@@ -5,6 +5,7 @@ pipelines:
         image: julia:latest
         script:
           - julia --project -e "import Pkg; Pkg.instantiate()"
+          - julia --project -e "document = Documenter.Documents.Document(); @show document.user.root"
           - julia --project "docs/make.jl"
         artifacts: # defining the artifacts to be passed to each future step.
           - docs/build/**
