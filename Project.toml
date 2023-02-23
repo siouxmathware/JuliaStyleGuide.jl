@@ -2,3 +2,6 @@ name = "JuliaStyleGuide"
 uuid = "3b021234-b5f1-4859-9c76-b47dff9f3c39"
 authors = ["Keith Myerscough <keith.myerscough@sioux.eu>, Tom Lemmens <tom.lemmens@sioux.eu>"]
 version = "0.1.1"
+
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
