@@ -4,7 +4,7 @@ using Documenter
 makedocs(;
     clean=true,
     modules=[JuliaStyleGuide],
-    repo="",
+    repo="https://bitbucket.org/limebv/project/juliastyleguide.jl/{commit}/{path}#lines-{line}",
     sitename="JuliaStyleGuide.jl",
     format=Documenter.HTML(
         prettyurls=!("local" in ARGS),
