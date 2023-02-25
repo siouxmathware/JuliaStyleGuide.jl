@@ -5,7 +5,7 @@ pipelines:
         image: julia:latest
         script:
           - apt-get update
-          - apt-get install -y git-all
+          - apt-get install -y git
           - julia --project -e "import Pkg; Pkg.instantiate()"
           - julia --project -e "using Documenter; document = Documenter.Documents.Document(); @show document.user.root"
           - julia --project "docs/make.jl"
