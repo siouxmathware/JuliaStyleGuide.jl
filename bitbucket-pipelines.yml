@@ -12,7 +12,7 @@ pipelines:
         artifacts: # defining the artifacts to be passed to each future step.
           - docs/build/**
     - step:
-        image: maven:3.3.3
+        image: maven:latest
         script:
           - pipe: atlassian/bitbucket-upload-file:0.1.2
             variables:
