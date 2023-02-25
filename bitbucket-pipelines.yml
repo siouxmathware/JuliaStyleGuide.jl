@@ -11,3 +11,11 @@ pipelines:
           - julia --project "docs/make.jl"
         artifacts: # defining the artifacts to be passed to each future step.
           - docs/build/**
+    - step:
+        image: maven:3.3.3
+        script:
+          - pipe: atlassian/bitbucket-upload-file:0.1.2
+            variables:
+              BITBUCKET_USERNAME: $BITBUCKET_USERNAME
+              BITBUCKET_APP_PASSWORD: $BITBUCKET_APP_PASSWORD
+              FILENAME: "docs/build/**"
