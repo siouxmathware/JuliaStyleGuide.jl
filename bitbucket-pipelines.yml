@@ -20,7 +20,7 @@ pipelines:
             variables:
               BITBUCKET_USERNAME: $BITBUCKET_USERNAME
               BITBUCKET_APP_PASSWORD: $BITBUCKET_APP_PASSWORD
-              FILENAME: "docs/build/**"
+              FILENAME: "docs/build"
 definitions:
   caches:
     julia-home: ~/.julia
