@@ -3,6 +3,8 @@ pipelines:
     - step:
         name: Build documentation
         image: julia:latest
+        caches:
+          - julia-home
         script:
           - apt-get update
           - apt-get install -y git
@@ -19,3 +21,6 @@ pipelines:
               BITBUCKET_USERNAME: $BITBUCKET_USERNAME
               BITBUCKET_APP_PASSWORD: $BITBUCKET_APP_PASSWORD
               FILENAME: "docs/build/**"
+definitions:
+  caches:
+    julia-home: ~/.julia
