@@ -17,6 +17,7 @@ makedocs(;
         "Documentation" => "documentation.md",
         "Package interface and dependencies" => "package_interface_and_dependencies.md",
         "Nested Include" => "nested_includes.md",
+        "Types and Their Methods" => "types_and_their_methods.md",
         "Docstrings" => "docstrings.md",
     ]
 )
