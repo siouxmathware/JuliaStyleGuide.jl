@@ -58,8 +58,8 @@ struct Barrel <: AbstractContainer
 end
 
 height(b::Barrel) = b.height
-width(b::Barrel) = b.radius
-depth(b::Barrel) = b.radius
+width(b::Barrel) = 2 * b.radius
+depth(b::Barrel) = 2 * b.radius
 
 volume(b::Barrel) = b.height * pi * b.radius^2
 ````
