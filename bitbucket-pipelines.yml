@@ -1,5 +1,5 @@
 pipelines:
-  default:
+  master:
     - step:
         name: Build documentation
         image: julia:latest
