@@ -11,16 +11,8 @@ pipelines:
           - julia --project -e "import Pkg; Pkg.instantiate()"
           - julia --project -e "using Documenter; document = Documenter.Documents.Document(); @show document.user.root"
           - julia --project "docs/make.jl"
-        artifacts: # defining the artifacts to be passed to each future step.
-          - docs/build/**
-    - step:
-        image: maven:latest
-        script:
-          - pipe: atlassian/bitbucket-upload-file:0.1.2
-            variables:
-              BITBUCKET_USERNAME: $BITBUCKET_USERNAME
-              BITBUCKET_APP_PASSWORD: $BITBUCKET_APP_PASSWORD
-              FILENAME: "docs/build/index.html"
+          - chmod +x ./publish_styleguide.sh
+          - ./publish_styleguide.sh
 definitions:
   caches:
     julia-home: ~/.julia
