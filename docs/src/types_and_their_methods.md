@@ -1,7 +1,6 @@
 ## Types and Their Methods
 Despite Julia not requiring to group data and methods together, it is generally helpful to organized your data and methods similarly to how traditional object-oriented programming works.
 
-
 ````julia
 # src/Slotting.jl
 
@@ -15,14 +14,14 @@ include(joinpath("containers", "containers.jl"))
 ````
 
 ````julia
-# src/types/containers.jl
+# src/types/containers/containers.jl
 include("AbstractContainer.jl")
 include("Crate.jl")
 include("Barrel.jl")
 ````
 
 ````julia
-# src/types/Containers/AbstractContainer.jl
+# src/types/containers/AbstractContainer.jl
 abstract type AbstractContainer end
 
 # interface, _must_ be implemented
@@ -36,7 +35,7 @@ volume(c::AbstractContainer) = height(c) * width(c) * depth(c)
 
 And concrete subtypes
 ````julia
-# src/types/Containers/Crate.jl
+# src/types/containers/Crate.jl
 struct Crate <: AbstractContainer
     height::Float64
     width::Float64
@@ -51,7 +50,7 @@ volume(c::Crate) = height(c) * width(c) * depth(c)
 ````
 and
 ````julia
-# src/types/Containers/Barrel.jl
+# src/types/containers/Barrel.jl
 struct Barrel <: AbstractContainer
     height::Float64
     radius::Float64
