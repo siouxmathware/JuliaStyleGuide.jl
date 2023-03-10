@@ -76,5 +76,5 @@ module SlottingTests
         @test isapprox(w == 2*radius)
     end
 end
-
 end
+````
