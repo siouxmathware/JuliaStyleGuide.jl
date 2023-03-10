@@ -46,6 +46,7 @@ It cannot be stressed enough that all these tests should be independent!
 Define the actual tests using the `@testset` macro. 
 Try to follow the "3xA" pattern: Arrange, Act, Assert (a.k.a. Given, When, Then) and the "FIRST" principles: Fast, Isolated, Repeatable, Self-validating, Thorough and Timely.
 The content of a test file may look like this, where we also demonstrate the convient use of for loops in testset defintion:
+
 ````julia
 # Slotting/test/test_reconstruct.jl
 module SlottingTests
