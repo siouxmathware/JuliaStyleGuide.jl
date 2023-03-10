@@ -19,7 +19,7 @@ retest(Slotting, SlottingTests)
 ````
 
 ````julia
-# Slotting/src/SlottingTests.jl
+# Slotting/test/SlottingTests.jl
 module SlottingTests
 
 using ReTest
@@ -42,3 +42,38 @@ In many cases, this is restricted to `ReTest` itself and maybe some packages in 
 The structure of tests should mirror the structure of the code base.
 In the example above, the files `test/test_model.jl` and `test/test_reconstruct.jl` mirror files `src/model.jl` and `src/reconstruct.jl`. 
 It cannot be stressed enough that all these tests should be independent! 
+
+Define the actual tests using the `@testset` macro. 
+Try to follow the "3xA" pattern: Arrange, Act, Assert (a.k.a. Given, When, Then) and the "FIRST" principles: Fast, Isolated, Repeatable, Self-validating, Thorough and Timely.
+The content of a test file may look like this, where we also demonstrate the convient use of for loops in testset defintion:
+````julia
+# Slotting/test/test_reconstruct.jl
+module SlottingTests
+
+@testset "Measurements" begin
+    @testset "Volume for radius = $radius ($(radius |> typeof))" for radius in [0, 1, 1.0, pi, 1/sqrt(pi)]  # some interesting samples
+        # GIVEN a barrel of some dimensions
+        height = 1  # we could add a nested loop to test different heights too
+        barrel = Barrel(height, radius)  # create the object
+
+        # WHEN computing the volume
+        vol = volume(barrel)
+        
+        # THEN the volume is correct, at least approximately
+        @test isapprox(vol, height * pi * radius^2)
+    end
+
+    @testset "Width for radius = $radius ($(radius |> typeof))" for radius in [0, 1, 1.0, pi, 1/sqrt(pi)]  # some interesting samples
+        # GIVEN a barrel of some dimensions
+        height = 1  # we could add a nested loop to test different heights too
+        barrel = Barrel(height, radius)  # create the object
+
+        # WHEN computing the volume
+        w = Slotting.width(barrel)  # to access a non-exported item, we must specify the Package name
+        
+        # THEN the width is correct, at least approximately
+        @test isapprox(w == 2*radius)
+    end
+end
+
+end
