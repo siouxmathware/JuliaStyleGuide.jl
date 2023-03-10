@@ -49,8 +49,6 @@ The content of a test file may look like this, where we also demonstrate the con
 
 ````julia
 # Slotting/test/test_reconstruct.jl
-module SlottingTests
-
 @testset "Measurements" begin
     @testset "Volume for radius = $radius ($(radius |> typeof))" for radius in [0, 1, 1.0, pi, 1/sqrt(pi)]  # some interesting samples
         # GIVEN a barrel of some dimensions
@@ -75,6 +73,5 @@ module SlottingTests
         # THEN the width is correct, at least approximately
         @test isapprox(w == 2*radius)
     end
-end
 end
 ````
