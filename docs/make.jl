@@ -19,6 +19,7 @@ makedocs(;
         "Nested Include" => "nested_includes.md",
         "Types and Their Methods" => "types_and_their_methods.md",
         "Docstrings" => "docstrings.md",
+        "Julia for Numpy users" => "julia_for_numpy_users.md",
     ]
 )
 
