@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - html-table
-      - main
     tags: '*'
   pull_request:
 
