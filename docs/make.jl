@@ -21,3 +21,7 @@ makedocs(;
         "Docstrings" => "docstrings.md",
     ]
 )
+
+deploydocs(
+    repo = "github.com/siouxmathware/JuliaStyleGuide.jl.git",
+)
