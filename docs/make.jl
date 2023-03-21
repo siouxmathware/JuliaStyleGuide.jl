@@ -23,10 +23,7 @@ makedocs(;
     ]
 )
 
-# see https://discourse.julialang.org/t/documenter-devbranch-build-not-deploying/92020/2
-if get(ENV, "GITHUB_EVENT_NAME", nothing) == "workflow_dispatch"
-    ENV["GITHUB_EVENT_NAME"] = "push"
-end
-deploydocs(
+deploydocs(; 
     repo = "github.com/siouxmathware/JuliaStyleGuide.jl.git",
+    devbranch = "html-table"
 )
