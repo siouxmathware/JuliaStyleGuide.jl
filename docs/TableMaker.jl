@@ -15,7 +15,7 @@ function make_markdown(ct::ComparisonTable{Names, N}) where {Names, N}
         join(["\n            <th>" * ct.headers[name] * "</th>" for name in Names], "\n") *
         """\n        </tr>\n```"""
     contentrows = join(make_content.(Ref(ct), ct.rows), "\n")
-    tableend = "</tbody></table>"
+    tableend = "```@raw html\n    </tbody>\n</table>\n```"
     return join([tablebegin, headerrow, contentrows, tableend], "\n\n")
 end
 
