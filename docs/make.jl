@@ -1,6 +1,8 @@
 using JuliaStyleGuide
 using Documenter
 
+include("make_table.jl")
+
 makedocs(;
     clean=true,
     modules=[JuliaStyleGuide],
@@ -22,6 +24,8 @@ makedocs(;
         "Julia for Numpy users" => "julia_for_numpy_users.md",
     ]
 )
+
+make_table(joinpath("docs", "build", "julia_for_numpy_users", "index.html"))
 
 deploydocs(; 
     repo = "github.com/siouxmathware/JuliaStyleGuide.jl.git",
