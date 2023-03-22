@@ -1,7 +1,7 @@
 using JuliaStyleGuide
 using Documenter
 
-include("make_table.jl")
+include("make_julia_for_numpy_users.jl")
 
 makedocs(;
     clean=true,
