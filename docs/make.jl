@@ -2,6 +2,9 @@ using JuliaStyleGuide
 using Documenter
 
 include("make_table.jl")
+using .TableMaker
+ct = TableMaker.ComparisonTable((a="Python", b="Julia", c="Note"), (a="1{}1", b="2{}2", c="3{}3"), [(a="1", b="2", c="3"), (a="a", b="b", c="c")])
+TableMaker.make_markdown(ct, joinpath("docs", "src", "julia_for_numpy_users_generated.md"))
 
 makedocs(;
     clean=true,
@@ -21,7 +24,7 @@ makedocs(;
         "Nested Include" => "nested_includes.md",
         "Types and Their Methods" => "types_and_their_methods.md",
         "Docstrings" => "docstrings.md",
-        "Julia for Numpy users" => "julia_for_numpy_users.md",
+        "Julia for Numpy users" => "julia_for_numpy_users_generated.md",
     ]
 )
 
