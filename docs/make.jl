@@ -25,8 +25,6 @@ makedocs(;
     ]
 )
 
-make_table(joinpath("docs", "build", "julia_for_numpy_users", "index.html"))
-
 deploydocs(; 
     repo = "github.com/siouxmathware/JuliaStyleGuide.jl.git",
     devbranch = "html-table"
