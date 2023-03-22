@@ -2,4 +2,4 @@
 
 # Ignore build of the docs
 docs/build
-**/.*
+**/julia_for_numpy_users.md
