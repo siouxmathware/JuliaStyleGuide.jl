@@ -1,5 +1,6 @@
 module TableMaker
 struct ComparisonTable{Names,N}
+    title::String
     headers::NamedTuple{Names,NTuple{N,String}}
     templates::NamedTuple{Names,NTuple{N,String}}
     rows::Vector{NamedTuple{Names,NTuple{N,String}}}
@@ -19,7 +20,7 @@ function make_markdown(ct::ComparisonTable{Names, N}) where {Names, N}
         """\n        </tr>\n```"""
     contentrows = join(make_content.(Ref(ct), ct.rows), "\n")
     tableend = "```@raw html\n    </tbody>\n</table>\n```"
-    return join([tablebegin, headerrow, contentrows, tableend], "\n\n")
+    return join([ct.title, tablebegin, headerrow, contentrows, tableend], "\n\n")
 end
 
 function make_content(
@@ -47,6 +48,14 @@ function make_markdown(ct::ComparisonTable, filepath::AbstractString)
     markdown = make_markdown(ct)
     open(filepath, "w") do out_file
         print(out_file, markdown)
+    end
+    return nothing
+end
+
+function make_markdown(cts::Vector{<:ComparisonTable}, filepath::AbstractString)
+    markdowns = make_markdown.(cts)
+    open(filepath, "w") do out_file
+        print.(out_file, markdowns)
     end
     return nothing
 end
