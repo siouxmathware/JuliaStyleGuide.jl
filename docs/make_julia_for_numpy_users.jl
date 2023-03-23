@@ -24,8 +24,6 @@ end
 n="""
 use a for-loop to print the numbers 1, 2, and 3 using range
 """),
-        (p="a and b", j="a && b", n="short-circuiting logical AND operator"),
-        (p="a or b", j="a || b", n="short-circuiting logical OR operator"),
 (p="""
 a = 4
 if a == 4:
@@ -46,14 +44,28 @@ create an if-else statement to check if a is 4 or 5 and print result
 """),
         (p="1j", j="1im", n="complex numbers "),
         (p="np.finfo(float).eps or np.spacing(1)", j="eps(Float64) or eps(1.0)", n="distance from 1 to the next larger representable real number in double precision"),
-    ]
-)
-
-linear_algebra_table = TableMaker.ComparisonTable(
-    "# Linear Algebra Equivalents", 
-    (p="Python", j="Julia", n="Note"), 
-    (p="```python\n{}\n```", j="```julia\n{}\n```", n="{}"), 
-    [
+        ]
+    )
+    
+    logical_operations_table = TableMaker.ComparisonTable(
+        "# Linear Algebra Equivalents", 
+        (p="Python", j="Julia", n="Note"), 
+        (p="```python\n{}\n```", j="```julia\n{}\n```", n="{}"), 
+        [
+            (p="a and b", j="a && b", n="short-circuiting logical AND operator"),
+            (p="a or b", j="a || b", n="short-circuiting logical OR operator"),
+            (p="np.logical_and(a,b)", j="a .&& b ", n="element-by-element AND operator"),
+            (p="np.logical_or(a,b)", j="a .|| b", n="element-by-element OR operator"),
+            (p="a & b", j="a & b", n="bitwise AND operator"),
+            (p="a | b", j="a | b", n="bitwise OR operator"),
+        ]
+    )
+        
+        linear_algebra_table = TableMaker.ComparisonTable(
+            "# Linear Algebra Equivalents", 
+            (p="Python", j="Julia", n="Note"), 
+            (p="```python\n{}\n```", j="```julia\n{}\n```", n="{}"), 
+            [
         (p="from numpy import random\nfrom numpy import linalg as la", j="import Random\nimport LinearAlgebra as LA", n="imports that are used later on[^1]"),
         (p="np.size(a)  # or\na.size", j="length(a)", n="number of elements of array a"),
         (p="np.shape(a)  # or\na.shape", j="size(a)", n="“size” of array a"),
@@ -215,10 +227,6 @@ LA.norm(v)
 n="""
 L2 norm of vector v
 """),
-        (p="logical_and(a,b)", j="a .&& b ", n="element-by-element AND operator"),
-        (p="np.logical_or(a,b)", j="a .|| b", n="element-by-element OR operator"),
-        (p="a & b", j="a & b", n="bitwise AND operator"),
-        (p="a | b", j="a | b", n="bitwise OR operator"),
         (p="la.inv(a)", j="inv(a)", n="inverse of square 2D array a"),
         (p="""
 la.pinv(a)
@@ -314,7 +322,7 @@ perhaps _without_ specifiying the specific items. See ...
 
 TableMaker.make_markdown(
     # prologue,
-    [general_purpose_table, linear_algebra_table], 
+    [general_purpose_table, logical_operations_table, linear_algebra_table], 
     # epilogue,
     joinpath("docs", "src", "julia_for_numpy_users.md")
 )
