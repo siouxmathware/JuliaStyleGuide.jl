@@ -5,14 +5,17 @@ struct ComparisonTable{Names,N}
     rows::Vector{NamedTuple{Names,NTuple{N,String}}}
 end
 
+
+
 function make_markdown(ct::ComparisonTable{Names, N}) where {Names, N}
+    colwidthpercentage = round(100/N) |> Int
     tablebegin = """```@raw html
 <table style="width:100%">
-    <tbody style="width:100%">
+    <tbody style="width:100%; display: table;">
 ```"""
     headerrow =
         """```@raw html\n        <tr>""" *
-        join(["\n            <th>" * ct.headers[name] * "</th>" for name in Names], "\n") *
+        join(["""\n            <th style="width: $colwidthpercentage%">""" * ct.headers[name] * "</th>" for name in Names], "\n") *
         """\n        </tr>\n```"""
     contentrows = join(make_content.(Ref(ct), ct.rows), "\n")
     tableend = "```@raw html\n    </tbody>\n</table>\n```"
