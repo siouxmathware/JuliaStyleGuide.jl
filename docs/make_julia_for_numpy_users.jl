@@ -1,11 +1,11 @@
 include("TableMaker.jl")
 using .TableMaker
 ct = TableMaker.ComparisonTable(
-    (a="Python", b="Julia", c="Note"), 
-    (a="1{}1", b="2{}2", c="3{}3"), 
+    (p="Python", j="Julia", n="Note"), 
+    (p="```python\n{}\n```", j="```julia\n{}\n```", n="{}"), 
     [
-        (a="1", b="2", c="3"), 
-        (a="a", b="b", c="c")
+        (p="import package", j="import Pkg", n="3"), 
+        (p="from package import *", j="using Pkg", n="c")
     ]
 )
 TableMaker.make_markdown(ct, joinpath("docs", "src", "julia_for_numpy_users.md"))
