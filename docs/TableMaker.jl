@@ -6,7 +6,7 @@ struct ComparisonTable{Names,N}
     rows::Vector{NamedTuple{Names,NTuple{N,String}}}
 end
 
-
+make_markdown(s::AbstractString) = s  # assume anything passed is already valid markdown
 
 function make_markdown(ct::ComparisonTable{Names, N}) where {Names, N}
     colwidthpercentage = round(100/N) |> Int
@@ -44,15 +44,7 @@ row_body = join([replace(ct.templates[name], "{}" => row[name]) for name in Name
     return join([row_begin, row_body, row_end], "\n")
 end
 
-function make_markdown(ct::ComparisonTable, filepath::AbstractString)
-    markdown = make_markdown(ct)
-    open(filepath, "w") do out_file
-        print(out_file, markdown)
-    end
-    return nothing
-end
-
-function make_markdown(cts::Vector{<:ComparisonTable}, filepath::AbstractString)
+function make_markdown(cts::Vector, filepath::AbstractString)
     markdowns = make_markdown.(cts)
     open(filepath, "w") do out_file
         print.(out_file, markdowns)
