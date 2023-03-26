@@ -2,7 +2,7 @@ include("TableMaker.jl")
 using .TableMaker
 
 general_purpose_table = TableMaker.ComparisonTable(
-    "# General Purpose Equivalents",
+    "## General Purpose",
     (p="Python", j="Julia", n="Note"),
     (p="```python\n{}\n```", j="```julia\n{}\n```", n="{}"),
     [
@@ -80,7 +80,7 @@ general_purpose_table = TableMaker.ComparisonTable(
 )
 
 logical_operations_table = TableMaker.ComparisonTable(
-    "# Logical Operations Equivalents",
+    "## Logical Operations",
     (p="Python", j="Julia", n="Note"),
     (p="```python\n{}\n```", j="```julia\n{}\n```", n="{}"),
     [
@@ -93,16 +93,47 @@ logical_operations_table = TableMaker.ComparisonTable(
     ],
 )
 
-linear_algebra_table = TableMaker.ComparisonTable(
-    "# Linear Algebra Equivalents",
+tensor_create_table = TableMaker.ComparisonTable(
+    "## Creating vectors, matrices and tensors (w.i.p.)",
     (p="Python", j="Julia", n="Note"),
     (p="```python\n{}\n```", j="```julia\n{}\n```", n="{}"),
     [
         (
-            p="from numpy \\\n    import random\nfrom numpy \\\n    import linalg as la",
-            j="import Random\nimport LinearAlgebra as LA",
-            n="imports that are used for this table[^1]",
+        p="""
+        np.array([
+            [1., 2., 3.], 
+            [4., 5., 6.]
+        ])
+        """, 
+        j="""[
+                [1 2 3];
+                [4 5 6]
+            ]""", 
+        n="""
+        define a 2x3 2D array
+        """
         ),
+        (
+        p="""
+        np.block([
+            [a, b],
+            [c, d]
+        ])""", 
+        j="""[
+            [a b];
+            [c d]
+        ]""", 
+        n="""construct a matrix from blocks a, b, c, and d
+        """
+        ),
+    ],
+)
+
+indexing_table = TableMaker.ComparisonTable(
+    "## Indexing vectors, matrices and tensors (w.i.p.)",
+    (p="Python", j="Julia", n="Note"),
+    (p="```python\n{}\n```", j="```julia\n{}\n```", n="{}"),
+    [
         (p="np.size(a)  # or\na.size", j="length(a)", n="number of elements of array a"),
         (p="np.shape(a)  # or\na.shzpe", j="size(a)", n="“size” of array a"),
         (
@@ -110,34 +141,6 @@ linear_algebra_table = TableMaker.ComparisonTable(
             j="size(a)[n]",
             n="get the number of elements of the n-th dimension of array a.",
         ),
-        (
-            p="""
-            np.array([
-                [1., 2., 3.], 
-                [4., 5., 6.]
-            ])
-            """, 
-            j="""[
-                    [1 2 3];
-                    [4 5 6]
-                ]""", 
-            n="""
-            define a 2x3 2D array
-            """
-           ),
-        (
-            p="""
-            np.block([
-                [a, b],
-                [c, d]
-            ])""", 
-            j="""[
-                [a b];
-                [c d]
-            ]""", 
-            n="""construct a matrix from blocks a, b, c, and d
-            """
-            ),
         (p="a[-1]", j="a[end]", n="access last element in 1D array a"),
         (
             p="a[1, 4]",
@@ -167,6 +170,19 @@ linear_algebra_table = TableMaker.ComparisonTable(
             n="every other row of a, starting with the first",
         ),
         (p="a[::-1, :]", j="a[end:-1:1, :]", n="a with rows in reverse order"),
+    ],
+)
+
+linear_algebra_table = TableMaker.ComparisonTable(
+    "## Linear Algebra",
+    (p="Python", j="Julia", n="Note"),
+    (p="```python\n{}\n```", j="```julia\n{}\n```", n="{}"),
+    [
+        (
+            p="from numpy \\\n    import random\nfrom numpy \\\n    import linalg as la",
+            j="import Random\nimport LinearAlgebra as LA",
+            n="imports that are used for this table[^1]",
+        ),
         (p="a.transpose()  # or\na.T", j="transpose(a)", n="transpose of a"),
         (p="a.conj().T  # or\na.conj().transpose()", j="a’", n="conjugate transpose of a"),
         (p="a @ b", j="a * b", n="matrix multiply"),
@@ -456,7 +472,7 @@ j="""
     ],
 )
 
-prologue = ""
+prologue = "# Equivalents in Julia for common statemtents"
 epilogue = replace(
     """
 [^1]: These imports are used here in this way for two reasons:
@@ -474,6 +490,8 @@ TableMaker.make_markdown(
         prologue,
         general_purpose_table,
         logical_operations_table,
+        tensor_create_table,
+        indexing_table,
         linear_algebra_table,
         epilogue,
     ],

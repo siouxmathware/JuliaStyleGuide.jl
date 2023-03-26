@@ -47,7 +47,7 @@ end
 function make_markdown(cts::Vector, filepath::AbstractString)
     markdowns = make_markdown.(cts)
     open(filepath, "w") do out_file
-        print.(out_file, markdowns)
+        println.(out_file, markdowns)
     end
     return nothing
 end
