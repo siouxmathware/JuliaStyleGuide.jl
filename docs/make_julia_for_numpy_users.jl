@@ -99,12 +99,12 @@ linear_algebra_table = TableMaker.ComparisonTable(
     (p="```python\n{}\n```", j="```julia\n{}\n```", n="{}"),
     [
         (
-            p="from numpy import random\nfrom numpy import linalg as la",
+            p="from numpy \\\n    import random\nfrom numpy \\\n    import linalg as la",
             j="import Random\nimport LinearAlgebra as LA",
             n="imports that are used for this table[^1]",
         ),
         (p="np.size(a)  # or\na.size", j="length(a)", n="number of elements of array a"),
-        (p="np.shape(a)  # or\na.shape", j="size(a)", n="“size” of array a"),
+        (p="np.shape(a)  # or\na.shzpe", j="size(a)", n="“size” of array a"),
         (
             p="a.shape[n-1]",
             j="size(a)[n]",
@@ -168,7 +168,7 @@ linear_algebra_table = TableMaker.ComparisonTable(
         ),
         (p="a[::-1, :]", j="a[end:-1:1, :]", n="a with rows in reverse order"),
         (p="a.transpose()  # or\na.T", j="transpose(a)", n="transpose of a"),
-        (p="a.conj().transpose()  # or\na.conj().T", j="a’", n="conjugate transpose of a"),
+        (p="a.conj().T  # or\na.conj().transpose()", j="a’", n="conjugate transpose of a"),
         (p="a @ b", j="a * b", n="matrix multiply"),
         (p="a * b", j="a .* b", n="element-wise multiply"),
         (p="a / b", j="a ./ b", n="element-wise divide"),
@@ -181,7 +181,7 @@ linear_algebra_table = TableMaker.ComparisonTable(
             n="find the indices where (a > 0.5)",
         ),
         (
-            p="a[:, np.nonzero(v > 0.5)[0]]",
+            p="a[:, v > 0.5]",
             j="a[:, v .> 0.5]",
             n="extract the columns of a where vector v > 0.5",
         ),
@@ -219,7 +219,7 @@ linear_algebra_table = TableMaker.ComparisonTable(
         ),
         (p="np.arange(1., 11.)", j="1:10", n="create an increasing vector"),
         (p="np.arange(10.)", j="0:10", n="create an increasing vector"),
-        (p="np.arange(1., 11.)[:, np.newaxis]", j="1:10", n="create a column vector"),
+        (p="np.arange(1., 11.) \\\n    [:, np.newaxis]", j="1:10", n="create a column vector"),
         (p="np.arange(1., 11.)", j="(1:10)’", n="create a row vector"),
         (
             p="np.zeros((3, 4))",
@@ -245,7 +245,7 @@ linear_algebra_table = TableMaker.ComparisonTable(
         (p="np.diag(v, 0)", j="Diagonal(a)  # or\ndiagm(a)", n="#3"),
         (
             p="""
-            from numpy.random 
+            from numpy.random \\
                 import default_rng
 
             rng = default_rng(42)
@@ -287,7 +287,10 @@ linear_algebra_table = TableMaker.ComparisonTable(
         ),
         (
             p="""
-            np.meshgrid([1, 2, 4], [2, 4, 5])
+            np.meshgrid(
+                [1, 2, 4], 
+                [2, 4, 5]
+            )
             """, j="""
             using LazyGrids: ndgrid
              
@@ -300,9 +303,8 @@ linear_algebra_table = TableMaker.ComparisonTable(
         (p="np.tile(a, (m, n))", j="repeat(a, m, n)", n="create m by n copies of a"),
         (
             p="""
-            np.concatenate((a, b), 1)  # or
             np.hstack((a, b))  # or
-            np.column_stack((a, b))
+            np.concatenate((a, b), 1)
             """, 
             j="""
             hcat(a, b)  # or
@@ -314,8 +316,8 @@ linear_algebra_table = TableMaker.ComparisonTable(
             """
         ),
         (p="""
-        np.concatenate((a, b))  # or
-        np.vstack((a, b))
+        np.vstack((a, b))  # or
+        np.concatenate((a, b))
         """, j="""
              vcat(a, b)  # or
              [a; b]  # or
