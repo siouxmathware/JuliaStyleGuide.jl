@@ -114,6 +114,26 @@ tensor_create_table = TableMaker.ComparisonTable(
         """
         ),
         (
+            p="np.zeros((3, 4))",
+            j="zeros(3, 4)",
+            n="3x4 two-dimensional array full of 64-bit floating point zeros",
+        ),
+        (
+            p="np.ones((3, 4))",
+            j="ones(3, 4)",
+            n="3x4 two-dimensional array full of 64-bit floating point ones",
+        ),
+        (p="""
+        np.eye(3)
+        """, 
+        j="""
+            UniformScaling(1)  # or
+            LA.I  # from LinearAlgebra
+            """, 
+        n="""
+        3x3 identity matrix.
+        """),
+        (
         p="""
         np.block([
             [a, b],
@@ -125,6 +145,101 @@ tensor_create_table = TableMaker.ComparisonTable(
         ]""", 
         n="""construct a matrix from blocks a, b, c, and d
         """
+        ),
+        (p="np.diag(v, 0)", j="Diagonal(a)  # or\ndiagm(a)", n="Construct a diagonal matrix from vector `v`"),
+        (
+            p="""
+            from numpy.random \\
+                import default_rng
+
+            rng = default_rng(42)
+            rng.random(3, 4)
+            """,
+            j="""
+            using Random
+            
+            rng = Xoshiro(42)
+            rand(Float64, (3, 4)) 
+            """,
+            n="""
+            generate a random 3x4 array with default random number generator and seed = 42
+            """,
+        ),
+        (
+            p="""
+            np.linspace(1, 3, 4)
+            """,
+            j="""
+            range(1, 3, length=4)
+            """,
+            n="""
+            4 equally spaced samples between 1 and 3, inclusive
+            """,
+        ),
+        (p="np.tile(a, (m, n))", j="repeat(a, m, n)", n="create m by n copies of a"),
+        (
+            p="""
+            np.hstack((a, b))  # or
+            np.concatenate((a, b), 1)
+            """, 
+            j="""
+            hcat(a, b)  # or
+            [a b]  # or
+            cat(a, b; dims=2)
+            """, 
+            n="""
+            concatenate columns of a and b
+            """
+        ),
+        (
+            p="""
+            np.vstack((a, b))  # or
+            np.concatenate((a, b))
+            """, 
+            j="""
+            vcat(a, b)  # or
+            [a; b]  # or
+            cat(a, b;, dims=1)
+            """, 
+            n="""
+            concatenate rows of a and b"""
+        ),
+        (p="np.arange(1., 11.)", j="1:10", n="create an increasing vector"),
+        (p="np.arange(10.)", j="0:10", n="create an increasing vector"),
+        (p="np.arange(1., 11.) \\\n    [:, np.newaxis]", j="1:10", n="create a column vector"),
+        (p="np.arange(1., 11.)", j="(1:10)’", n="create a row vector"),
+        (
+            p="y = x.flatten()",
+            j="x[:]",
+            n="turn array into vector, note that Julia uses column-major order",
+        ),
+        (
+            p="""
+           np.mgrid[0:9., 0:6.]
+           """,
+            j="""
+            using LazyGrids
+            
+            ndgrid(0:8, 0:5)
+            """,
+            n="""
+            two 2D arrays: one of x values, the other of y values
+            """,
+        ),
+        (
+            p="""
+            np.meshgrid(
+                [1, 2, 4], 
+                [2, 4, 5]
+            )
+            """, j="""
+            using LazyGrids: ndgrid
+             
+            ndgrid([1, 2, 4], [2, 4, 5])
+            """, 
+            n="""
+            Create a meshgrid      
+            """
         ),
     ],
 )
@@ -138,10 +253,11 @@ indexing_table = TableMaker.ComparisonTable(
         (p="np.shape(a)  # or\na.shzpe", j="size(a)", n="“size” of array a"),
         (
             p="a.shape[n-1]",
-            j="size(a)[n]",
+            j="size(a, n)",
             n="get the number of elements of the n-th dimension of array a.",
         ),
         (p="a[-1]", j="a[end]", n="access last element in 1D array a"),
+        (p="a[0]", j="a[1]  # or\na[begin]", n="access first element in 1D array a[^2]"),
         (
             p="a[1, 4]",
             j="a[2, 5]",
@@ -170,27 +286,7 @@ indexing_table = TableMaker.ComparisonTable(
             n="every other row of a, starting with the first",
         ),
         (p="a[::-1, :]", j="a[end:-1:1, :]", n="a with rows in reverse order"),
-    ],
-)
-
-linear_algebra_table = TableMaker.ComparisonTable(
-    "## Linear Algebra",
-    (p="Python", j="Julia", n="Note"),
-    (p="```python\n{}\n```", j="```julia\n{}\n```", n="{}"),
-    [
-        (
-            p="from numpy \\\n    import random\nfrom numpy \\\n    import linalg as la",
-            j="import Random\nimport LinearAlgebra as LA",
-            n="imports that are used for this table[^1]",
-        ),
-        (p="a.transpose()  # or\na.T", j="transpose(a)", n="transpose of a"),
-        (p="a.conj().T  # or\na.conj().transpose()", j="a’", n="conjugate transpose of a"),
-        (p="a @ b", j="a * b", n="matrix multiply"),
-        (p="a * b", j="a .* b", n="element-wise multiply"),
-        (p="a / b", j="a ./ b", n="element-wise divide"),
-        (p="a ** 3", j="a.^3", n="element-wise exponentiation "),
-        (p="la.matrixpower(a, 3)", j="a^3", n="matrix exponentiation "),
-        (p="(a > 0.5)", j="x a .> 0.5", n="matrix whose i,jth element is (a_ij > 0.5)."),
+        (p="(a > 0.5)", j="a .> 0.5", n="matrix whose i,jth element is (a_ij > 0.5)."),
         (
             p="np.nonzero(a > 0.5)",
             j="findall(ax .> 0.5)",
@@ -216,6 +312,26 @@ linear_algebra_table = TableMaker.ComparisonTable(
             j="a .* (a .> 0.5)",
             n="a with elements less than 0.5 zeroed out",
         ),
+    ],
+)
+
+linear_algebra_table = TableMaker.ComparisonTable(
+    "## Linear Algebra",
+    (p="Python", j="Julia", n="Note"),
+    (p="```python\n{}\n```", j="```julia\n{}\n```", n="{}"),
+    [
+        (
+            p="from numpy \\\n    import random\nfrom numpy \\\n    import linalg as la",
+            j="import Random\nimport LinearAlgebra as LA",
+            n="imports that are used for this table[^1]",
+        ),
+        (p="a.transpose()  # or\na.T", j="transpose(a)", n="transpose of a"),
+        (p="a.conj().T  # or\na.conj().transpose()", j="a’", n="conjugate transpose of a"),
+        (p="a @ b", j="a * b", n="matrix multiply"),
+        (p="a * b", j="a .* b", n="element-wise multiply"),
+        (p="a / b", j="a ./ b", n="element-wise divide"),
+        (p="a ** 3", j="a.^3", n="element-wise exponentiation "),
+        (p="la.matrixpower(a, 3)", j="a^3", n="matrix exponentiation "),
         (p="a[:] = 3", j="a .= 3", n="set all values to the same scalar value"),
         (p="y = x.copy()", j="y = copy(x)", n="Get copy"),
         (
@@ -228,119 +344,7 @@ linear_algebra_table = TableMaker.ComparisonTable(
             j="@view y = x[1, :]",
             n="@view macro changes slices into views (references)",
         ),
-        (
-            p="y = x.flatten()",
-            j="x[:]",
-            n="turn array into vector, note that Julia uses column-major order",
-        ),
-        (p="np.arange(1., 11.)", j="1:10", n="create an increasing vector"),
-        (p="np.arange(10.)", j="0:10", n="create an increasing vector"),
-        (p="np.arange(1., 11.) \\\n    [:, np.newaxis]", j="1:10", n="create a column vector"),
-        (p="np.arange(1., 11.)", j="(1:10)’", n="create a row vector"),
-        (
-            p="np.zeros((3, 4))",
-            j="zeros(3, 4)",
-            n="3x4 two-dimensional array full of 64-bit floating point zeros",
-        ),
-        (
-            p="np.ones((3, 4))",
-            j="ones(3, 4)",
-            n="3x4 two-dimensional array full of 64-bit floating point ones",
-        ),
-        (p="""
-        np.eye(3)
-        """, 
-        j="""
-            UniformScaling(1)  # or
-            LA.I  # from LinearAlgebra
-            """, 
-        n="""
-        3x3 identity matrix.
-        """),
-        (p="np.diag(a)", j="diag(a)", n="#3"),
-        (p="np.diag(v, 0)", j="Diagonal(a)  # or\ndiagm(a)", n="#3"),
-        (
-            p="""
-            from numpy.random \\
-                import default_rng
-
-            rng = default_rng(42)
-            rng.random(3, 4)
-            """,
-            j="""
-            using Random
-            
-            rng = Xoshiro(42)
-            rand(Float64, (3, 4)) 
-            """,
-            n="""
-            generate a random 3x4 array with default random number generator and seed = 42
-            """,
-        ),
-        (
-            p="""
-           np.linspace(1, 3, 4)
-           """,
-            j="""
-            range(1, 3, length=4)
-            """,
-            n="""
-            4 equally spaced samples between 1 and 3, inclusive
-            """,
-        ),
-        (
-            p="""
-           np.mgrid[0:9., 0:6.]
-           """,
-            j="""
-            Using LazyGrids
-            
-            ndgrid(0:8, 0:5)
-            """,
-            n="""
-            two 2D arrays: one of x values, the other of y values
-            """,
-        ),
-        (
-            p="""
-            np.meshgrid(
-                [1, 2, 4], 
-                [2, 4, 5]
-            )
-            """, j="""
-            using LazyGrids: ndgrid
-             
-            ndgrid([1, 2, 4], [2, 4, 5])
-            """, 
-            n="""
-            Create a meshgrid      
-            """
-        ),
-        (p="np.tile(a, (m, n))", j="repeat(a, m, n)", n="create m by n copies of a"),
-        (
-            p="""
-            np.hstack((a, b))  # or
-            np.concatenate((a, b), 1)
-            """, 
-            j="""
-            hcat(a, b)  # or
-            [a b]  # or
-            cat(a, b; dims=2)
-            """, 
-            n="""
-            concatenate columns of a and b
-            """
-        ),
-        (p="""
-        np.vstack((a, b))  # or
-        np.concatenate((a, b))
-        """, j="""
-             vcat(a, b)  # or
-             [a; b]  # or
-             cat(a, b;, dims=1)
-             """, n="""
-                  concatenate rows of a and b
-                  """),
+        (p="np.diag(a)", j="diag(a)", n="Extract the diagonal from matrix `a`"),
         (p="a.max()", j="maximum(a)", n=""),
         (
             p="""
@@ -380,14 +384,15 @@ linear_algebra_table = TableMaker.ComparisonTable(
         (p="la.inv(a)", j="inv(a)", n="inverse of square 2D array a"),
         (
             p="""
-la.pinv(a)
-""", 
-j="""
-     LA.pinv(v)
-     """, 
-     n="""
-          pseudo-inverse of 2D array a
-          """),
+            la.pinv(a)
+            """, 
+            j="""
+            LA.pinv(v)
+            """, 
+            n="""
+            pseudo-inverse of 2D array a
+            """
+        ),
         (
             p="""
             la.matrix_rank(a)
@@ -475,14 +480,23 @@ j="""
 prologue = "# Equivalents in Julia for common statemtents"
 epilogue = replace(
     """
-[^1]: These imports are used here in this way for two reasons:
-(i) to allow short statements in the table and 
-(ii) to be explicit about the source of the methods imported.
-In proper code, neither the `la` in Python nor the `LA` in Julia would be advised. 
-For Julia, the `LinearAlgebra` would be more typically imported with a `using` statement, 
-perhaps _without_ specifiying the specific items. See ...
+[^1]: These imports are used here in this way for two reasons: ^
+(i) to allow short statements in the table and ^
+(ii) to be explicit about the source of the methods imported. ^
+In proper code, neither the `la` in Python nor the `LA` in Julia would be advised. ^
+For Julia, the `LinearAlgebra` would be more typically imported with a `using` statement, ^
+perhaps _without_ specifiying the specific items. See <section thereon>
+
+[^2]: The _concrete_ `Vector`, `Matrix` and `Array` types in Julia use the index `1` to indicate the first element. ^
+This is, however, an implementation detail for these types. ^
+Other types that derive from the _abstract_ types `AbstractVector`, `AbstractMatrix` or `AbstractArray` ^
+may index their data differently. ^
+Most notably, Julia implements an `OffsetArray` type, that allows arrays indexed from any datum. ^
+When defining functions to use with an abstract array type, as is recommended for composability, ^
+it is vital _not to assume anything about the indexing_ of the concrete structs.
+See <good link>
 """,
-    "\n" => "",
+    "^\n" => "",
 )
 
 TableMaker.make_markdown(
