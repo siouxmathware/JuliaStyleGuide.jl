@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Julia for Numpy users · JuliaStyleGuide.jl</title><script data-outdated-warner src="../assets/warner.js"></script><link rel="canonical" href="/julia_for_numpy_users/"/><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../">JuliaStyleGuide.jl</a></span></div><form class="docs-search" action="../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../">Home</a></li><li><a class="tocitem" href="../testing/">Testing</a></li><li><a class="tocitem" href="../documentation/">Documentation</a></li><li><a class="tocitem" href="../package_interface_and_dependencies/">Package interface and dependencies</a></li><li><a class="tocitem" href="../nested_includes/">Nested Include</a></li><li><a class="tocitem" href="../types_and_their_methods/">Types and Their Methods</a></li><li><a class="tocitem" href="../docstrings/">Docstrings</a></li><li class="is-active"><a class="tocitem" href>Julia for Numpy users</a><ul class="internal"><li class="toplevel"><a class="tocitem" href="#Logical-Operations-Equivalents"><span>Logical Operations Equivalents</span></a></li><li class="toplevel"><a class="tocitem" href="#Linear-Algebra-Equivalents"><span>Linear Algebra Equivalents</span></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Julia for Numpy users</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Julia for Numpy users</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://bitbucket.org/limebv/project/juliastyleguide.jl/master//docs/src/julia_for_numpy_users.md#lines-" title="Edit on BitBucket"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on BitBucket</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="General-Purpose-Equivalents"><a class="docs-heading-anchor" href="#General-Purpose-Equivalents">General Purpose Equivalents</a><a id="General-Purpose-Equivalents-1"></a><a class="docs-heading-anchor-permalink" href="#General-Purpose-Equivalents" title="Permalink"></a></h1><table style="width:100%">
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Julia for Numpy users · JuliaStyleGuide.jl</title><script data-outdated-warner src="../assets/warner.js"></script><link rel="canonical" href="/julia_for_numpy_users/"/><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../">JuliaStyleGuide.jl</a></span></div><form class="docs-search" action="../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../">Home</a></li><li><a class="tocitem" href="../testing/">Testing</a></li><li><a class="tocitem" href="../documentation/">Documentation</a></li><li><a class="tocitem" href="../package_interface_and_dependencies/">Package interface and dependencies</a></li><li><a class="tocitem" href="../nested_includes/">Nested Include</a></li><li><a class="tocitem" href="../types_and_their_methods/">Types and Their Methods</a></li><li><a class="tocitem" href="../docstrings/">Docstrings</a></li><li class="is-active"><a class="tocitem" href>Julia for Numpy users</a><ul class="internal"><li><a class="tocitem" href="#General-Purpose"><span>General Purpose</span></a></li><li><a class="tocitem" href="#Logical-Operations"><span>Logical Operations</span></a></li><li><a class="tocitem" href="#Creating-vectors,-matrices-and-tensors-(w.i.p.)"><span>Creating vectors, matrices and tensors (w.i.p.)</span></a></li><li><a class="tocitem" href="#Indexing-vectors,-matrices-and-tensors-(w.i.p.)"><span>Indexing vectors, matrices and tensors (w.i.p.)</span></a></li><li><a class="tocitem" href="#Linear-Algebra"><span>Linear Algebra</span></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Julia for Numpy users</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Julia for Numpy users</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://bitbucket.org/limebv/project/juliastyleguide.jl/master//docs/src/julia_for_numpy_users.md#lines-" title="Edit on BitBucket"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on BitBucket</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="Equivalents-in-Julia-for-common-statemtents"><a class="docs-heading-anchor" href="#Equivalents-in-Julia-for-common-statemtents">Equivalents in Julia for common statemtents</a><a id="Equivalents-in-Julia-for-common-statemtents-1"></a><a class="docs-heading-anchor-permalink" href="#Equivalents-in-Julia-for-common-statemtents" title="Permalink"></a></h1><h2 id="General-Purpose"><a class="docs-heading-anchor" href="#General-Purpose">General Purpose</a><a id="General-Purpose-1"></a><a class="docs-heading-anchor-permalink" href="#General-Purpose" title="Permalink"></a></h2><table style="width:100%">
     <tbody style="width:100%; display: table;">        <tr>
             <th style="width: 33%">Python</th>
 
@@ -67,7 +67,7 @@ end
  eps(1.0)</code></pre>            </td>
             <td><p>distance from 1 to the next larger representable real number in double precision</p>            </td>
         </tr>    </tbody>
-</table><h1 id="Logical-Operations-Equivalents"><a class="docs-heading-anchor" href="#Logical-Operations-Equivalents">Logical Operations Equivalents</a><a id="Logical-Operations-Equivalents-1"></a><a class="docs-heading-anchor-permalink" href="#Logical-Operations-Equivalents" title="Permalink"></a></h1><table style="width:100%">
+</table><h2 id="Logical-Operations"><a class="docs-heading-anchor" href="#Logical-Operations">Logical Operations</a><a id="Logical-Operations-1"></a><a class="docs-heading-anchor-permalink" href="#Logical-Operations" title="Permalink"></a></h2><table style="width:100%">
     <tbody style="width:100%; display: table;">        <tr>
             <th style="width: 33%">Python</th>
 
@@ -99,33 +99,13 @@ end
             <td><pre><code class="language-julia hljs">a | b</code></pre>            </td>
             <td><p>bitwise OR operator</p>            </td>
         </tr>    </tbody>
-</table><h1 id="Linear-Algebra-Equivalents"><a class="docs-heading-anchor" href="#Linear-Algebra-Equivalents">Linear Algebra Equivalents</a><a id="Linear-Algebra-Equivalents-1"></a><a class="docs-heading-anchor-permalink" href="#Linear-Algebra-Equivalents" title="Permalink"></a></h1><table style="width:100%">
+</table><h2 id="Creating-vectors,-matrices-and-tensors-(w.i.p.)"><a class="docs-heading-anchor" href="#Creating-vectors,-matrices-and-tensors-(w.i.p.)">Creating vectors, matrices and tensors (w.i.p.)</a><a id="Creating-vectors,-matrices-and-tensors-(w.i.p.)-1"></a><a class="docs-heading-anchor-permalink" href="#Creating-vectors,-matrices-and-tensors-(w.i.p.)" title="Permalink"></a></h2><table style="width:100%">
     <tbody style="width:100%; display: table;">        <tr>
             <th style="width: 33%">Python</th>
 
             <th style="width: 33%">Julia</th>
 
             <th style="width: 33%">Note</th>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">from numpy import random
-from numpy import linalg as la</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">import Random
-import LinearAlgebra as LA</code></pre>            </td>
-            <td><p>imports that are used for this table<sup class="footnote-reference"><a id="citeref-1" href="#footnote-1">[1]</a></sup></p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.size(a)  # or
-a.size</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">length(a)</code></pre>            </td>
-            <td><p>number of elements of array a</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.shape(a)  # or
-a.shape</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">size(a)</code></pre>            </td>
-            <td><p>“size” of array a</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">a.shape[n-1]</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">size(a)[n]</code></pre>            </td>
-            <td><p>get the number of elements of the n-th dimension of array a.</p>            </td>
         </tr>        <tr>
             <td><pre><code class="language-python hljs">np.array([
     [1., 2., 3.], 
@@ -138,6 +118,21 @@ a.shape</code></pre>            </td>
 ]</code></pre>            </td>
             <td><p>define a 2x3 2D array</p>            </td>
         </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.zeros((3, 4))</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">zeros(3, 4)</code></pre>            </td>
+            <td><p>3x4 two-dimensional array full of 64-bit floating point zeros</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.ones((3, 4))</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">ones(3, 4)</code></pre>            </td>
+            <td><p>3x4 two-dimensional array full of 64-bit floating point ones</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.eye(3)
+</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">UniformScaling(1)  # or
+LA.I  # from LinearAlgebra
+</code></pre>            </td>
+            <td><p>3x3 identity matrix.</p>            </td>
+        </tr>        <tr>
             <td><pre><code class="language-python hljs">np.block([
     [a, b],
     [c, d]
@@ -148,9 +143,122 @@ a.shape</code></pre>            </td>
 ]</code></pre>            </td>
             <td><p>construct a matrix from blocks a, b, c, and d</p>            </td>
         </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.diag(v, 0)</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">Diagonal(a)  # or
+diagm(a)</code></pre>            </td>
+            <td><p>Construct a diagonal matrix from vector <code>v</code></p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">from numpy.random \
+    import default_rng
+
+rng = default_rng(42)
+rng.random(3, 4)
+</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">using Random
+
+rng = Xoshiro(42)
+rand(Float64, (3, 4)) 
+</code></pre>            </td>
+            <td><p>generate a random 3x4 array with default random number generator and seed = 42</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.linspace(1, 3, 4)
+</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">range(1, 3, length=4)
+</code></pre>            </td>
+            <td><p>4 equally spaced samples between 1 and 3, inclusive</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.tile(a, (m, n))</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">repeat(a, m, n)</code></pre>            </td>
+            <td><p>create m by n copies of a</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.hstack((a, b))  # or
+np.concatenate((a, b), 1)
+</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">hcat(a, b)  # or
+[a b]  # or
+cat(a, b; dims=2)
+</code></pre>            </td>
+            <td><p>concatenate columns of a and b</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.vstack((a, b))  # or
+np.concatenate((a, b))
+</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">vcat(a, b)  # or
+[a; b]  # or
+cat(a, b;, dims=1)
+</code></pre>            </td>
+            <td><p>concatenate rows of a and b</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.arange(1., 11.)</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">1:10</code></pre>            </td>
+            <td><p>create an increasing vector</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.arange(10.)</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">0:10</code></pre>            </td>
+            <td><p>create an increasing vector</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.arange(1., 11.) \
+    [:, np.newaxis]</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">1:10</code></pre>            </td>
+            <td><p>create a column vector</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.arange(1., 11.)</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">(1:10)’</code></pre>            </td>
+            <td><p>create a row vector</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">y = x.flatten()</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">x[:]</code></pre>            </td>
+            <td><p>turn array into vector, note that Julia uses column-major order</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.mgrid[0:9., 0:6.]
+</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">using LazyGrids
+
+ndgrid(0:8, 0:5)
+</code></pre>            </td>
+            <td><p>two 2D arrays: one of x values, the other of y values</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.meshgrid(
+    [1, 2, 4], 
+    [2, 4, 5]
+)
+</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">using LazyGrids: ndgrid
+ 
+ndgrid([1, 2, 4], [2, 4, 5])
+</code></pre>            </td>
+            <td><p>Create a meshgrid      </p>            </td>
+        </tr>    </tbody>
+</table><h2 id="Indexing-vectors,-matrices-and-tensors-(w.i.p.)"><a class="docs-heading-anchor" href="#Indexing-vectors,-matrices-and-tensors-(w.i.p.)">Indexing vectors, matrices and tensors (w.i.p.)</a><a id="Indexing-vectors,-matrices-and-tensors-(w.i.p.)-1"></a><a class="docs-heading-anchor-permalink" href="#Indexing-vectors,-matrices-and-tensors-(w.i.p.)" title="Permalink"></a></h2><table style="width:100%">
+    <tbody style="width:100%; display: table;">        <tr>
+            <th style="width: 33%">Python</th>
+
+            <th style="width: 33%">Julia</th>
+
+            <th style="width: 33%">Note</th>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.size(a)  # or
+a.size</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">length(a)</code></pre>            </td>
+            <td><p>number of elements of array a</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.shape(a)  # or
+a.shzpe</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">size(a)</code></pre>            </td>
+            <td><p>“size” of array a</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">a.shape[n-1]</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">size(a, n)</code></pre>            </td>
+            <td><p>get the number of elements of the n-th dimension of array a.</p>            </td>
+        </tr>        <tr>
             <td><pre><code class="language-python hljs">a[-1]</code></pre>            </td>
             <td><pre><code class="language-julia hljs">a[end]</code></pre>            </td>
             <td><p>access last element in 1D array a</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">a[0]</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">a[1]  # or
+a[begin]</code></pre>            </td>
+            <td><p>access first element in 1D array a<sup class="footnote-reference"><a id="citeref-2" href="#footnote-2">[2]</a></sup></p>            </td>
         </tr>        <tr>
             <td><pre><code class="language-python hljs">a[1, 4]</code></pre>            </td>
             <td><pre><code class="language-julia hljs">a[2, 5]</code></pre>            </td>
@@ -187,13 +295,53 @@ a[0:5, :]</code></pre>            </td>
             <td><pre><code class="language-julia hljs">a[end:-1:1, :]</code></pre>            </td>
             <td><p>a with rows in reverse order</p>            </td>
         </tr>        <tr>
+            <td><pre><code class="language-python hljs">(a &gt; 0.5)</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">a .&gt; 0.5</code></pre>            </td>
+            <td><p>matrix whose i,jth element is (a_ij &gt; 0.5).</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">np.nonzero(a &gt; 0.5)</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">findall(ax .&gt; 0.5)</code></pre>            </td>
+            <td><p>find the indices where (a &gt; 0.5)</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">a[:, v &gt; 0.5]</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">a[:, v .&gt; 0.5]</code></pre>            </td>
+            <td><p>extract the columns of a where vector v &gt; 0.5</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">a[:, v.T &gt; 0.5]</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">a[:, v .&gt; 0.5] </code></pre>            </td>
+            <td><p>extract the columns of a where column vector v &gt; 0.5</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">a[a &lt; 0.5] = 0</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">a[a .&lt; 0.5] .= 0</code></pre>            </td>
+            <td><p>a with elements less than 0.5 zeroed out</p>            </td>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">a * (a &gt; 0.5)</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">a .* (a .&gt; 0.5)</code></pre>            </td>
+            <td><p>a with elements less than 0.5 zeroed out</p>            </td>
+        </tr>    </tbody>
+</table><h2 id="Linear-Algebra"><a class="docs-heading-anchor" href="#Linear-Algebra">Linear Algebra</a><a id="Linear-Algebra-1"></a><a class="docs-heading-anchor-permalink" href="#Linear-Algebra" title="Permalink"></a></h2><table style="width:100%">
+    <tbody style="width:100%; display: table;">        <tr>
+            <th style="width: 33%">Python</th>
+
+            <th style="width: 33%">Julia</th>
+
+            <th style="width: 33%">Note</th>
+        </tr>        <tr>
+            <td><pre><code class="language-python hljs">from numpy \
+    import random
+from numpy \
+    import linalg as la</code></pre>            </td>
+            <td><pre><code class="language-julia hljs">import Random
+import LinearAlgebra as LA</code></pre>            </td>
+            <td><p>imports that are used for this table<sup class="footnote-reference"><a id="citeref-1" href="#footnote-1">[1]</a></sup></p>            </td>
+        </tr>        <tr>
             <td><pre><code class="language-python hljs">a.transpose()  # or
 a.T</code></pre>            </td>
             <td><pre><code class="language-julia hljs">transpose(a)</code></pre>            </td>
             <td><p>transpose of a</p>            </td>
         </tr>        <tr>
-            <td><pre><code class="language-python hljs">a.conj().transpose()  # or
-a.conj().T</code></pre>            </td>
+            <td><pre><code class="language-python hljs">a.conj().T  # or
+a.conj().transpose()</code></pre>            </td>
             <td><pre><code class="language-julia hljs">a’</code></pre>            </td>
             <td><p>conjugate transpose of a</p>            </td>
         </tr>        <tr>
@@ -217,30 +365,6 @@ a.conj().T</code></pre>            </td>
             <td><pre><code class="language-julia hljs">a^3</code></pre>            </td>
             <td><p>matrix exponentiation </p>            </td>
         </tr>        <tr>
-            <td><pre><code class="language-python hljs">(a &gt; 0.5)</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">x a .&gt; 0.5</code></pre>            </td>
-            <td><p>matrix whose i,jth element is (a_ij &gt; 0.5).</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.nonzero(a &gt; 0.5)</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">findall(ax .&gt; 0.5)</code></pre>            </td>
-            <td><p>find the indices where (a &gt; 0.5)</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">a[:, np.nonzero(v &gt; 0.5)[0]]</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">a[:, v .&gt; 0.5]</code></pre>            </td>
-            <td><p>extract the columns of a where vector v &gt; 0.5</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">a[:, v.T &gt; 0.5]</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">a[:, v .&gt; 0.5] </code></pre>            </td>
-            <td><p>extract the columns of a where column vector v &gt; 0.5</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">a[a &lt; 0.5] = 0</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">a[a .&lt; 0.5] .= 0</code></pre>            </td>
-            <td><p>a with elements less than 0.5 zeroed out</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">a * (a &gt; 0.5)</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">a .* (a .&gt; 0.5)</code></pre>            </td>
-            <td><p>a with elements less than 0.5 zeroed out</p>            </td>
-        </tr>        <tr>
             <td><pre><code class="language-python hljs">a[:] = 3</code></pre>            </td>
             <td><pre><code class="language-julia hljs">a .= 3</code></pre>            </td>
             <td><p>set all values to the same scalar value</p>            </td>
@@ -257,107 +381,9 @@ a.conj().T</code></pre>            </td>
             <td><pre><code class="language-julia hljs">@view y = x[1, :]</code></pre>            </td>
             <td><p>@view macro changes slices into views (references)</p>            </td>
         </tr>        <tr>
-            <td><pre><code class="language-python hljs">y = x.flatten()</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">x[:]</code></pre>            </td>
-            <td><p>turn array into vector, note that Julia uses column-major order</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.arange(1., 11.)</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">1:10</code></pre>            </td>
-            <td><p>create an increasing vector</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.arange(10.)</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">0:10</code></pre>            </td>
-            <td><p>create an increasing vector</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.arange(1., 11.)[:, np.newaxis]</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">1:10</code></pre>            </td>
-            <td><p>create a column vector</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.arange(1., 11.)</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">(1:10)’</code></pre>            </td>
-            <td><p>create a row vector</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.zeros((3, 4))</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">zeros(3, 4)</code></pre>            </td>
-            <td><p>3x4 two-dimensional array full of 64-bit floating point zeros</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.ones((3, 4))</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">ones(3, 4)</code></pre>            </td>
-            <td><p>3x4 two-dimensional array full of 64-bit floating point ones</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.eye(3)
-</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">UniformScaling(1)  # or
-LA.I  # from LinearAlgebra
-</code></pre>            </td>
-            <td><p>3x3 identity matrix.</p>            </td>
-        </tr>        <tr>
             <td><pre><code class="language-python hljs">np.diag(a)</code></pre>            </td>
             <td><pre><code class="language-julia hljs">diag(a)</code></pre>            </td>
-            <td><p>#3</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.diag(v, 0)</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">Diagonal(a)  # or
-diagm(a)</code></pre>            </td>
-            <td><p>#3</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">from numpy.random 
-    import default_rng
-
-rng = default_rng(42)
-rng.random(3, 4)
-</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">using Random
-
-rng = Xoshiro(42)
-rand(Float64, (3, 4)) 
-</code></pre>            </td>
-            <td><p>generate a random 3x4 array with default random number generator and seed = 42</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.linspace(1, 3, 4)
-</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">range(1, 3, length=4)
-</code></pre>            </td>
-            <td><p>4 equally spaced samples between 1 and 3, inclusive</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.mgrid[0:9., 0:6.]
-</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">Using LazyGrids
-
-ndgrid(0:8, 0:5)
-</code></pre>            </td>
-            <td><p>two 2D arrays: one of x values, the other of y values</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.meshgrid([1, 2, 4], [2, 4, 5])
-</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">using LazyGrids: ndgrid
- 
-ndgrid([1, 2, 4], [2, 4, 5])
-</code></pre>            </td>
-            <td><p>Create a meshgrid      </p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.tile(a, (m, n))</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">repeat(a, m, n)</code></pre>            </td>
-            <td><p>create m by n copies of a</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.concatenate((a, b), 1)  # or
-np.hstack((a, b))  # or
-np.column_stack((a, b))
-</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">hcat(a, b)  # or
-[a b]  # or
-cat(a, b; dims=2)
-</code></pre>            </td>
-            <td><p>concatenate columns of a and b</p>            </td>
-        </tr>        <tr>
-            <td><pre><code class="language-python hljs">np.concatenate((a, b))  # or
-np.vstack((a, b))
-</code></pre>            </td>
-            <td><pre><code class="language-julia hljs">vcat(a, b)  # or
-[a; b]  # or
-cat(a, b;, dims=1)
-</code></pre>            </td>
-            <td><p>concatenate rows of a and b</p>            </td>
+            <td><p>Extract the diagonal from matrix <code>a</code></p>            </td>
         </tr>        <tr>
             <td><pre><code class="language-python hljs">a.max()</code></pre>            </td>
             <td><pre><code class="language-julia hljs">maximum(a)</code></pre>            </td>
@@ -447,4 +473,4 @@ vals, vecs = F;
 </code></pre>            </td>
             <td><p>find the k=3 largest eigenvalues and eigenvectors of 2D array a. The julia version only works for <code>a</code> of specific type.</p>            </td>
         </tr>    </tbody>
-</table><section class="footnotes is-size-7"><ul><li class="footnote" id="footnote-1"><a class="tag is-link" href="#citeref-1">1</a>These imports are used here in this way for two reasons:(i) to allow short statements in the table and (ii) to be explicit about the source of the methods imported.In proper code, neither the <code>la</code> in Python nor the <code>LA</code> in Julia would be advised. For Julia, the <code>LinearAlgebra</code> would be more typically imported with a <code>using</code> statement, perhaps <em>without</em> specifiying the specific items. See ...</li></ul></section></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../docstrings/">« Docstrings</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Thursday 23 March 2023 20:26">Thursday 23 March 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+</table><p>See &lt;good link&gt;</p><section class="footnotes is-size-7"><ul><li class="footnote" id="footnote-1"><a class="tag is-link" href="#citeref-1">1</a>These imports are used here in this way for two reasons: (i) to allow short statements in the table and (ii) to be explicit about the source of the methods imported. In proper code, neither the <code>la</code> in Python nor the <code>LA</code> in Julia would be advised. For Julia, the <code>LinearAlgebra</code> would be more typically imported with a <code>using</code> statement, perhaps <em>without</em> specifiying the specific items. See &lt;section thereon&gt;</li><li class="footnote" id="footnote-2"><a class="tag is-link" href="#citeref-2">2</a>The <em>concrete</em> <code>Vector</code>, <code>Matrix</code> and <code>Array</code> types in Julia use the index <code>1</code> to indicate the first element. This is, however, an implementation detail for these types. Other types that derive from the <em>abstract</em> types <code>AbstractVector</code>, <code>AbstractMatrix</code> or <code>AbstractArray</code> may index their data differently. Most notably, Julia implements an <code>OffsetArray</code> type, that allows arrays indexed from any datum. When defining functions to use with an abstract array type, as is recommended for composability, it is vital <em>not to assume anything about the indexing</em> of the concrete structs.</li></ul></section></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../docstrings/">« Docstrings</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Friday 31 March 2023 21:54">Friday 31 March 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
