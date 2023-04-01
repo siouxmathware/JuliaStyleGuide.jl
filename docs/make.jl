@@ -9,7 +9,7 @@ Themes.compile(joinpath(@__DIR__,"src/assets/light.scss"), joinpath(@__DIR__,"sr
 makedocs(;
     clean=true,
     modules=[JuliaStyleGuide],
-    repo="https://bitbucket.org/limebv/project/juliastyleguide.jl/{commit}/{path}#lines-{line}",
+    repo="github.com/siouxmathware/JuliaStyleGuide.jl/{commit}/{path}#lines-{line}",
     sitename="JuliaStyleGuide.jl",
     format=Documenter.HTML(;
         prettyurls=!("local" in ARGS), canonical="", edit_link="master"
