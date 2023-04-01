@@ -1,7 +1,10 @@
 using JuliaStyleGuide
 using Documenter
+using DocumenterTools: Themes
 
 include("make_julia_for_numpy_users.jl")
+
+Themes.compile(joinpath(@__DIR__,"src/assets/light.scss"), joinpath(@__DIR__,"src/assets/themes/documenter-light.css"))
 
 makedocs(;
     clean=true,
