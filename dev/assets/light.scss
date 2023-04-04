@@ -59,7 +59,7 @@ $boldcolor: $maincolor; // darken-color($maincolor, 1);
 $body-background-color: $mainwhite; // main page background
 
 // Sidebar
-$border: $maincolor; //borders
+// $border: $maincolor; //borders
 $documenter-sidebar-background: $maincolor; //background color for sidebar
 $documenter-sidebar-color: $mainwhite; //font color all sidebar
 $documenter-sidebar-menu-hover-color: $documenter-sidebar-color; // text color
@@ -115,22 +115,20 @@ $input-focus-border-color: $mainwhite;
     }
 }
 
-// #documenter .docs-sidebar { // This makes sidebar have shadow at all displays
-//   border-right: none;
-//   box-shadow: 1.2*$shadow-size 0rem 1*$shadow-blur $shadow-color;
+#documenter .docs-sidebar ul.docs-menu ul.internal {
+    margin: 0 0.5rem 0.5rem;
+    border-top: none;
+}
 
-//   form.docs-search > input { // these controls are for the searchbar
-//     color: $mainwhite;
-//     background-color: darken-color($documenter-sidebar-background, 1);
-//     border-color: darken-color($documenter-sidebar-background, 2);
-//     margin-top: 1.0rem;
-//     margin-bottom: 1.0rem; // adjust the margings between search and other elements
-//     &::placeholder {
-//       color: $mainwhite; // placeholder text color ("Search here...")
-//     }
-//   }
-// }
+#documenter .docs-sidebar {
+    border-right: 3px solid black;
+}
 
-// #documenter .content p { // Justify text in paragraphs
-//   text-align: justify;
-// }
+#documenter .docs-sidebar ul.docs-menu li.is-active {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+#documenter .docs-sidebar ul.docs-menu {
+    border-top: 1px solid black;
+}

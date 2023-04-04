@@ -2026,7 +2026,7 @@ a.box:active {
 
 .content blockquote {
   background-color: whitesmoke;
-  border-left: 5px solid black;
+  border-left: 5px solid #dbdbdb;
   padding: 1.25em 1.5em; }
 
 .content ol {
@@ -2085,7 +2085,7 @@ a.box:active {
   width: 100%; }
   .content table td,
   .content table th {
-    border: 1px solid black;
+    border: 1px solid #dbdbdb;
     border-width: 0 0 1px;
     padding: 0.5em 0.75em;
     vertical-align: top; }
@@ -2294,7 +2294,7 @@ a.box:active {
   padding: 0;
   width: 100%; }
   .progress::-webkit-progress-bar {
-    background-color: black; }
+    background-color: #dbdbdb; }
   .progress::-webkit-progress-value {
     background-color: #000; }
   .progress::-moz-progress-bar {
@@ -2309,7 +2309,7 @@ a.box:active {
   .progress.is-white::-ms-fill {
     background-color: white; }
   .progress.is-white:indeterminate {
-    background-image: linear-gradient(to right, white 30%, black 30%); }
+    background-image: linear-gradient(to right, white 30%, #dbdbdb 30%); }
   .progress.is-black::-webkit-progress-value {
     background-color: #0a0a0a; }
   .progress.is-black::-moz-progress-bar {
@@ -2317,7 +2317,7 @@ a.box:active {
   .progress.is-black::-ms-fill {
     background-color: #0a0a0a; }
   .progress.is-black:indeterminate {
-    background-image: linear-gradient(to right, #0a0a0a 30%, black 30%); }
+    background-image: linear-gradient(to right, #0a0a0a 30%, #dbdbdb 30%); }
   .progress.is-light::-webkit-progress-value {
     background-color: whitesmoke; }
   .progress.is-light::-moz-progress-bar {
@@ -2325,7 +2325,7 @@ a.box:active {
   .progress.is-light::-ms-fill {
     background-color: whitesmoke; }
   .progress.is-light:indeterminate {
-    background-image: linear-gradient(to right, whitesmoke 30%, black 30%); }
+    background-image: linear-gradient(to right, whitesmoke 30%, #dbdbdb 30%); }
   .progress.is-dark::-webkit-progress-value, .content kbd.progress::-webkit-progress-value {
     background-color: #363636; }
   .progress.is-dark::-moz-progress-bar, .content kbd.progress::-moz-progress-bar {
@@ -2333,7 +2333,7 @@ a.box:active {
   .progress.is-dark::-ms-fill, .content kbd.progress::-ms-fill {
     background-color: #363636; }
   .progress.is-dark:indeterminate, .content kbd.progress:indeterminate {
-    background-image: linear-gradient(to right, #363636 30%, black 30%); }
+    background-image: linear-gradient(to right, #363636 30%, #dbdbdb 30%); }
   .progress.is-primary::-webkit-progress-value, .docstring > section > a.progress.docs-sourcelink::-webkit-progress-value {
     background-color: #4eb5de; }
   .progress.is-primary::-moz-progress-bar, .docstring > section > a.progress.docs-sourcelink::-moz-progress-bar {
@@ -2341,7 +2341,7 @@ a.box:active {
   .progress.is-primary::-ms-fill, .docstring > section > a.progress.docs-sourcelink::-ms-fill {
     background-color: #4eb5de; }
   .progress.is-primary:indeterminate, .docstring > section > a.progress.docs-sourcelink:indeterminate {
-    background-image: linear-gradient(to right, #4eb5de 30%, black 30%); }
+    background-image: linear-gradient(to right, #4eb5de 30%, #dbdbdb 30%); }
   .progress.is-link::-webkit-progress-value {
     background-color: #d6001c; }
   .progress.is-link::-moz-progress-bar {
@@ -2349,7 +2349,7 @@ a.box:active {
   .progress.is-link::-ms-fill {
     background-color: #d6001c; }
   .progress.is-link:indeterminate {
-    background-image: linear-gradient(to right, #d6001c 30%, black 30%); }
+    background-image: linear-gradient(to right, #d6001c 30%, #dbdbdb 30%); }
   .progress.is-info::-webkit-progress-value {
     background-color: #209cee; }
   .progress.is-info::-moz-progress-bar {
@@ -2357,7 +2357,7 @@ a.box:active {
   .progress.is-info::-ms-fill {
     background-color: #209cee; }
   .progress.is-info:indeterminate {
-    background-image: linear-gradient(to right, #209cee 30%, black 30%); }
+    background-image: linear-gradient(to right, #209cee 30%, #dbdbdb 30%); }
   .progress.is-success::-webkit-progress-value {
     background-color: #22c35b; }
   .progress.is-success::-moz-progress-bar {
@@ -2365,7 +2365,7 @@ a.box:active {
   .progress.is-success::-ms-fill {
     background-color: #22c35b; }
   .progress.is-success:indeterminate {
-    background-image: linear-gradient(to right, #22c35b 30%, black 30%); }
+    background-image: linear-gradient(to right, #22c35b 30%, #dbdbdb 30%); }
   .progress.is-warning::-webkit-progress-value {
     background-color: #ffdd57; }
   .progress.is-warning::-moz-progress-bar {
@@ -2373,7 +2373,7 @@ a.box:active {
   .progress.is-warning::-ms-fill {
     background-color: #ffdd57; }
   .progress.is-warning:indeterminate {
-    background-image: linear-gradient(to right, #ffdd57 30%, black 30%); }
+    background-image: linear-gradient(to right, #ffdd57 30%, #dbdbdb 30%); }
   .progress.is-danger::-webkit-progress-value {
     background-color: #da0b00; }
   .progress.is-danger::-moz-progress-bar {
@@ -2381,14 +2381,14 @@ a.box:active {
   .progress.is-danger::-ms-fill {
     background-color: #da0b00; }
   .progress.is-danger:indeterminate {
-    background-image: linear-gradient(to right, #da0b00 30%, black 30%); }
+    background-image: linear-gradient(to right, #da0b00 30%, #dbdbdb 30%); }
   .progress:indeterminate {
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
     animation-name: moveIndeterminate;
     animation-timing-function: linear;
-    background-color: black;
-    background-image: linear-gradient(to right, #000 30%, black 30%);
+    background-color: #dbdbdb;
+    background-image: linear-gradient(to right, #000 30%, #dbdbdb 30%);
     background-position: top left;
     background-repeat: no-repeat;
     background-size: 150% 150%; }
@@ -3279,12 +3279,12 @@ a.tag:hover, .docstring > section > a.docs-sourcelink:hover {
     background-color: #eeeeee;
     color: #363636; }
   .file-label:hover .file-name {
-    border-color: black; }
+    border-color: #d5d5d5; }
   .file-label:active .file-cta {
     background-color: #e8e8e8;
     color: #363636; }
   .file-label:active .file-name {
-    border-color: black; }
+    border-color: #cfcfcf; }
 
 .file-input {
   height: 100%;
@@ -3297,7 +3297,7 @@ a.tag:hover, .docstring > section > a.docs-sourcelink:hover {
 
 .file-cta,
 .file-name {
-  border-color: black;
+  border-color: #dbdbdb;
   border-radius: 4px;
   font-size: 1em;
   padding-left: 1em;
@@ -3309,7 +3309,7 @@ a.tag:hover, .docstring > section > a.docs-sourcelink:hover {
   color: #4a4a4a; }
 
 .file-name {
-  border-color: black;
+  border-color: #dbdbdb;
   border-style: solid;
   border-width: 1px 1px 1px 0;
   display: block;
@@ -3670,7 +3670,7 @@ a.tag:hover, .docstring > section > a.docs-sourcelink:hover {
 
 .card-footer {
   background-color: transparent;
-  border-top: 1px solid black;
+  border-top: 1px solid #dbdbdb;
   align-items: stretch;
   display: flex; }
 
@@ -3683,7 +3683,7 @@ a.tag:hover, .docstring > section > a.docs-sourcelink:hover {
   justify-content: center;
   padding: 0.75rem; }
   .card-footer-item:not(:last-child) {
-    border-right: 1px solid black; }
+    border-right: 1px solid #dbdbdb; }
 
 .card .media:not(:last-child) {
   margin-bottom: 1.5rem; }
@@ -3743,7 +3743,7 @@ button.dropdown-item {
     color: #fff; }
 
 .dropdown-divider {
-  background-color: black;
+  background-color: #dbdbdb;
   border: none;
   display: block;
   height: 1px;
@@ -3831,7 +3831,7 @@ button.dropdown-item {
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px; }
   .list-item:not(:last-child) {
-    border-bottom: 1px solid black; }
+    border-bottom: 1px solid #dbdbdb; }
   .list-item.is-active {
     background-color: #d6001c;
     color: #fff; }
@@ -3847,7 +3847,7 @@ a.list-item {
   .media .content:not(:last-child) {
     margin-bottom: 0.75rem; }
   .media .media {
-    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(219, 219, 219, 0.5);
     display: flex;
     padding-top: 0.75rem; }
     .media .media .content:not(:last-child),
@@ -3858,7 +3858,7 @@ a.list-item {
       .media .media .media + .media {
         margin-top: 0.5rem; }
   .media + .media {
-    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(219, 219, 219, 0.5);
     margin-top: 1rem;
     padding-top: 1rem; }
   .media.is-large + .media {
@@ -3910,7 +3910,7 @@ a.list-item {
       background-color: #d6001c;
       color: #fff; }
   .menu-list li ul {
-    border-left: 1px solid black;
+    border-left: 1px solid #dbdbdb;
     margin: 0.75em;
     padding-left: 0.75em; }
 
@@ -4041,7 +4041,7 @@ a.list-item {
     border-top-right-radius: 0; }
 
 .message-body {
-  border-color: black;
+  border-color: #dbdbdb;
   border-radius: 4px;
   border-style: solid;
   border-width: 0 0 0 4px;
@@ -4106,7 +4106,7 @@ a.list-item {
   position: relative; }
 
 .modal-card-head {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #dbdbdb;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px; }
 
@@ -4120,7 +4120,7 @@ a.list-item {
 .modal-card-foot {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  border-top: 1px solid black; }
+  border-top: 1px solid #dbdbdb; }
   .modal-card-foot .button:not(:last-child) {
     margin-right: 0.5em; }
 
@@ -4860,7 +4860,7 @@ a.navbar-item,
     .navbar-item.has-dropdown-up .navbar-link::after {
       transform: rotate(135deg) translate(0.25em, -0.25em); }
     .navbar-item.has-dropdown-up .navbar-dropdown {
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid #dbdbdb;
       border-radius: 6px 6px 0 0;
       border-top: none;
       bottom: 100%;
@@ -4885,7 +4885,7 @@ a.navbar-item,
     background-color: white;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
-    border-top: 2px solid black;
+    border-top: 2px solid #dbdbdb;
     box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
     display: none;
     font-size: 0.875rem;
@@ -5090,13 +5090,13 @@ a.navbar-item,
 .panel-heading,
 .panel-tabs,
 .panel-block {
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black; }
+  border-bottom: 1px solid #dbdbdb;
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb; }
   .panel-heading:first-child,
   .panel-tabs:first-child,
   .panel-block:first-child {
-    border-top: 1px solid black; }
+    border-top: 1px solid #dbdbdb; }
 
 .panel-heading {
   background-color: whitesmoke;
@@ -5113,7 +5113,7 @@ a.navbar-item,
   font-size: 0.875em;
   justify-content: center; }
   .panel-tabs a {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #dbdbdb;
     margin-bottom: -1px;
     padding: 0.5em; }
     .panel-tabs a.is-active {
@@ -5177,7 +5177,7 @@ label.panel-block {
   white-space: nowrap; }
   .tabs a {
     align-items: center;
-    border-bottom-color: black;
+    border-bottom-color: #dbdbdb;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     color: #000;
@@ -5196,7 +5196,7 @@ label.panel-block {
       color: #d6001c; }
   .tabs ul {
     align-items: center;
-    border-bottom-color: black;
+    border-bottom-color: #dbdbdb;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     display: flex;
@@ -5226,16 +5226,16 @@ label.panel-block {
     border-radius: 4px 4px 0 0; }
     .tabs.is-boxed a:hover {
       background-color: whitesmoke;
-      border-bottom-color: black; }
+      border-bottom-color: #dbdbdb; }
   .tabs.is-boxed li.is-active a {
     background-color: white;
-    border-color: black;
+    border-color: #dbdbdb;
     border-bottom-color: transparent !important; }
   .tabs.is-fullwidth li {
     flex-grow: 1;
     flex-shrink: 0; }
   .tabs.is-toggle a {
-    border-color: black;
+    border-color: #dbdbdb;
     border-style: solid;
     border-width: 1px;
     margin-bottom: 0;
@@ -7129,7 +7129,7 @@ pre {
 .docstring {
   margin-bottom: 1em;
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid #dbdbdb;
   box-shadow: 2px 2px 3px rgba(10, 10, 10, 0.1);
   max-width: 100%; }
   .docstring > header {
@@ -7140,7 +7140,7 @@ pre {
     background-color: #d8dadb;
     box-shadow: 0 1px 2px rgba(10, 10, 10, 0.1);
     box-shadow: none;
-    border-bottom: 1px solid black; }
+    border-bottom: 1px solid #dbdbdb; }
     .docstring > header code {
       background-color: transparent; }
     .docstring > header .docstring-binding {
@@ -7150,7 +7150,7 @@ pre {
   .docstring > section {
     position: relative;
     padding: 0.75rem 0.75rem;
-    border-bottom: 1px solid black; }
+    border-bottom: 1px solid #dbdbdb; }
     .docstring > section:last-child {
       border-bottom: none; }
     .docstring > section > a.docs-sourcelink {
@@ -7196,7 +7196,7 @@ pre {
       color: #ad0017; }
 
 .content pre {
-  border: 1px solid black; }
+  border: 1px solid #dbdbdb; }
 
 .content code {
   font-weight: inherit; }
@@ -7274,7 +7274,7 @@ li.no-marker {
 
 #documenter .docs-main header.docs-navbar {
   background-color: #fff;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #dbdbdb;
   z-index: 2;
   min-height: 4rem;
   margin-bottom: 1rem;
@@ -7319,7 +7319,7 @@ li.no-marker {
         -webkit-transition-duration: 0.7s;
         /* Safari */ } }
 #documenter .docs-main section.footnotes {
-  border-top: 1px solid black; }
+  border-top: 1px solid #dbdbdb; }
   #documenter .docs-main section.footnotes li .tag:first-child, #documenter .docs-main section.footnotes li .docstring > section > a.docs-sourcelink:first-child, #documenter .docs-main section.footnotes li .content kbd:first-child, .content #documenter .docs-main section.footnotes li kbd:first-child {
     margin-right: 1em;
     margin-bottom: 0.4em; }
@@ -7329,7 +7329,7 @@ li.no-marker {
   flex-wrap: wrap;
   margin-left: 0;
   margin-right: 0;
-  border-top: 1px solid black;
+  border-top: 1px solid #dbdbdb;
   padding-top: 1rem;
   padding-bottom: 1rem; }
   @media screen and (max-width: 1055px) {
@@ -7353,7 +7353,7 @@ li.no-marker {
   flex-direction: column;
   color: #fff;
   background-color: black;
-  border-right: 1px solid black;
+  border-right: 1px solid #dbdbdb;
   padding: 0;
   flex: 0 0 18rem;
   z-index: 5;
@@ -7393,7 +7393,7 @@ li.no-marker {
     #documenter .docs-sidebar .docs-package-name a, #documenter .docs-sidebar .docs-package-name a:hover {
       color: #fff; }
   #documenter .docs-sidebar .docs-version-selector {
-    border-top: 1px solid black;
+    border-top: 1px solid #dbdbdb;
     display: none;
     padding: 0.5rem; }
     #documenter .docs-sidebar .docs-version-selector.visible {
@@ -7401,7 +7401,7 @@ li.no-marker {
   #documenter .docs-sidebar ul.docs-menu {
     flex-grow: 1;
     user-select: none;
-    border-top: 1px solid black;
+    border-top: 1px solid #dbdbdb;
     padding-bottom: 1.5rem;
     /* Managing collapsible submenus */ }
     #documenter .docs-sidebar ul.docs-menu > li > .tocitem {
@@ -7409,7 +7409,7 @@ li.no-marker {
     #documenter .docs-sidebar ul.docs-menu > li li {
       font-size: 0.95em;
       margin-left: 1em;
-      border-left: 1px solid black; }
+      border-left: 1px solid #dbdbdb; }
     #documenter .docs-sidebar ul.docs-menu input.collapse-toggle {
       display: none; }
     #documenter .docs-sidebar ul.docs-menu ul.collapsed {
@@ -7446,8 +7446,8 @@ li.no-marker {
       color: #fff;
       background-color: #f15d03; }
     #documenter .docs-sidebar ul.docs-menu li.is-active {
-      border-top: 1px solid black;
-      border-bottom: 1px solid black;
+      border-top: 1px solid #dbdbdb;
+      border-bottom: 1px solid #dbdbdb;
       background-color: #fff; }
       #documenter .docs-sidebar ul.docs-menu li.is-active .tocitem, #documenter .docs-sidebar ul.docs-menu li.is-active .tocitem:hover {
         background-color: #fff;
@@ -7459,7 +7459,7 @@ li.no-marker {
       border-top: none; }
     #documenter .docs-sidebar ul.docs-menu ul.internal {
       margin: 0 0.5rem 0.5rem;
-      border-top: 1px solid black; }
+      border-top: 1px solid #dbdbdb; }
       #documenter .docs-sidebar ul.docs-menu ul.internal li {
         font-size: 0.85em;
         border-left: none;
@@ -7743,3 +7743,17 @@ code.hljs {
   #documenter .docs-sidebar ul.docs-menu > li.is-active > .tocitem:hover {
     color: #fff;
     background: #d6001c; }
+
+#documenter .docs-sidebar ul.docs-menu ul.internal {
+  margin: 0 0.5rem 0.5rem;
+  border-top: none; }
+
+#documenter .docs-sidebar {
+  border-right: 3px solid black; }
+
+#documenter .docs-sidebar ul.docs-menu li.is-active {
+  border-top: 3px solid black;
+  border-bottom: 3px solid black; }
+
+#documenter .docs-sidebar ul.docs-menu {
+  border-top: 1px solid black; }
