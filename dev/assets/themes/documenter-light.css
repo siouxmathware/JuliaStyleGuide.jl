@@ -7137,7 +7137,7 @@ pre {
     flex-grow: 1;
     align-items: stretch;
     padding: 0.5rem 0.75rem;
-    background-color: #d8dadb;
+    background-color: #f2f2f2;
     box-shadow: 0 1px 2px rgba(10, 10, 10, 0.1);
     box-shadow: none;
     border-bottom: 1px solid #dbdbdb; }
@@ -7351,8 +7351,8 @@ li.no-marker {
 #documenter .docs-sidebar {
   display: flex;
   flex-direction: column;
-  color: #fff;
-  background-color: black;
+  color: #000;
+  background-color: #f2f2f2;
   border-right: 1px solid #dbdbdb;
   padding: 0;
   flex: 0 0 18rem;
@@ -7391,7 +7391,7 @@ li.no-marker {
     #documenter .docs-sidebar .docs-package-name .docs-autofit {
       max-width: 16.2rem; }
     #documenter .docs-sidebar .docs-package-name a, #documenter .docs-sidebar .docs-package-name a:hover {
-      color: #fff; }
+      color: #000; }
   #documenter .docs-sidebar .docs-version-selector {
     border-top: 1px solid #dbdbdb;
     display: none;
@@ -7440,21 +7440,21 @@ li.no-marker {
       display: block;
       padding: 0.5rem 0.5rem; }
       #documenter .docs-sidebar ul.docs-menu .tocitem, #documenter .docs-sidebar ul.docs-menu .tocitem:hover {
-        color: #fff;
-        background: black; }
+        color: #000;
+        background: #f2f2f2; }
     #documenter .docs-sidebar ul.docs-menu a.tocitem:hover, #documenter .docs-sidebar ul.docs-menu label.tocitem:hover {
       color: #fff;
-      background-color: #f15d03; }
+      background-color: #333; }
     #documenter .docs-sidebar ul.docs-menu li.is-active {
       border-top: 1px solid #dbdbdb;
       border-bottom: 1px solid #dbdbdb;
-      background-color: #fff; }
+      background-color: #d8dadb; }
       #documenter .docs-sidebar ul.docs-menu li.is-active .tocitem, #documenter .docs-sidebar ul.docs-menu li.is-active .tocitem:hover {
-        background-color: #fff;
+        background-color: #d8dadb;
         color: #000; }
       #documenter .docs-sidebar ul.docs-menu li.is-active ul.internal .tocitem:hover {
-        background-color: #fff;
-        color: #d6001c; }
+        background-color: #333;
+        color: #fff; }
     #documenter .docs-sidebar ul.docs-menu > li.is-active:first-child {
       border-top: none; }
     #documenter .docs-sidebar ul.docs-menu ul.internal {
@@ -7486,9 +7486,9 @@ li.no-marker {
         background: none; }
       #documenter .docs-sidebar ul.docs-menu::-webkit-scrollbar-thumb {
         border-radius: 5px 0px 0px 5px;
-        background: black; }
+        background: #dedede; }
       #documenter .docs-sidebar ul.docs-menu::-webkit-scrollbar-thumb:hover {
-        background: black; } }
+        background: #c9c9c9; } }
   @media screen and (max-width: 1055px) {
     #documenter .docs-sidebar {
       overflow-y: auto;
@@ -7498,9 +7498,9 @@ li.no-marker {
         background: none; }
       #documenter .docs-sidebar::-webkit-scrollbar-thumb {
         border-radius: 5px 0px 0px 5px;
-        background: black; }
+        background: #dedede; }
       #documenter .docs-sidebar::-webkit-scrollbar-thumb:hover {
-        background: black; } }
+        background: #c9c9c9; } }
 #documenter .docs-main #documenter-search-info {
   margin-bottom: 1rem; }
 
@@ -7738,22 +7738,34 @@ code.hljs {
   font-weight: bold; }
 
 #documenter .docs-sidebar ul.docs-menu > li.is-active > .tocitem {
-  color: #fff;
-  background: #f15d03; }
+  color: #000;
+  background: #f2f2f2; }
   #documenter .docs-sidebar ul.docs-menu > li.is-active > .tocitem:hover {
     color: #fff;
-    background: #d6001c; }
-
-#documenter .docs-sidebar ul.docs-menu ul.internal {
-  margin: 0 0.5rem 0.5rem;
-  border-top: none; }
+    background: #333; }
 
 #documenter .docs-sidebar {
-  border-right: 3px solid black; }
-
-#documenter .docs-sidebar ul.docs-menu li.is-active {
-  border-top: 3px solid black;
-  border-bottom: 3px solid black; }
+  border: 0px; }
 
 #documenter .docs-sidebar ul.docs-menu {
-  border-top: 1px solid black; }
+  flex-grow: 1;
+  user-select: none;
+  border: 0px;
+  padding-bottom: 1.5rem; }
+
+#documenter .docs-sidebar ul.docs-menu .tocitem {
+  border: 1px solid #fff; }
+
+#documenter .docs-sidebar ul.docs-menu ul.internal {
+  margin: 0;
+  border: none; }
+
+#documenter .docs-sidebar ul.docs-menu ul.internal li {
+  margin: 0; }
+
+#documenter .docs-sidebar ul.docs-menu ul.internal .tocitem {
+  width: 100%;
+  padding: 0.5rem; }
+
+#documenter .docs-sidebar ul.docs-menu li.is-active {
+  border: none; }
