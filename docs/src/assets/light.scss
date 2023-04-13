@@ -11,7 +11,8 @@
 $maincolor: rgb(0, 0, 0);   // main color of the org theme
 $siouxorange: rgb(241, 93, 3); // secondary color that serves as accents
 $siouxoffwhite: rgb(242, 242, 242); 
-$siouxgrey: rgb(216, 218, 219); 
+$siouxcoolgrey: rgb(216, 218, 219); 
+$siouxundocumentedgrey: #333;
 $siouxmint: rgb(168, 210, 198); 
 $siouxblue: rgb(108, 186, 199); 
 $siouxazure: rgb(0, 174, 239); 
@@ -59,17 +60,16 @@ $boldcolor: $maincolor; // darken-color($maincolor, 1);
 $body-background-color: $mainwhite; // main page background
 
 // Sidebar
-// $border: $maincolor; //borders
-$documenter-sidebar-background: $maincolor; //background color for sidebar
-$documenter-sidebar-color: $mainwhite; //font color all sidebar
-$documenter-sidebar-menu-hover-color: $documenter-sidebar-color; // text color
-$documenter-sidebar-menu-hover-background: $siouxorange;
+$documenter-sidebar-background: $siouxoffwhite; //background color for sidebar
+$documenter-sidebar-color: $mainblack; //font color all sidebar
+$documenter-sidebar-menu-hover-color: $mainwhite; // text color
+$documenter-sidebar-menu-hover-background: $siouxundocumentedgrey;
 
-$documenter-sidebar-menu-item: $siouxazure;
-$documenter-sidebar-menu-active-background: $mainwhite;
+$documenter-sidebar-menu-item: $siouxorange;
+$documenter-sidebar-menu-active-background: $siouxcoolgrey;
 $documenter-sidebar-menu-active-color: $mainblack;
-$documenter-sidebar-menu-active-hover-background: $mainwhite;
-$documenter-sidebar-menu-active-hover-color: $siouxsunred;
+$documenter-sidebar-menu-active-hover-background: $siouxundocumentedgrey;
+$documenter-sidebar-menu-active-hover-color: $mainwhite;
 
 // this is the color the links get, and also when they are hovered
 $link: $siouxsunred;
@@ -91,7 +91,7 @@ $codebg: $siouxoffwhite;
 $code-background: $codebg; // for inline code
 $pre-background: $codebg;  // for code blocks
 // $documenter-docstring-header-link: $mainwhite;
-$documenter-docstring-header-background: $siouxgrey;
+$documenter-docstring-header-background: $siouxoffwhite;
 
 // main text font size
 $body-font-size: 1.0em; // the default is 1.0
@@ -107,28 +107,32 @@ $input-focus-border-color: $mainwhite;
 @import "documenter-light";
 
 #documenter .docs-sidebar ul.docs-menu > li.is-active > .tocitem {
-    color: $mainwhite;
-    background: $siouxorange;
+    color: $mainblack;
+    background: $siouxoffwhite;
     &:hover {
         color: $mainwhite;
-        background: $siouxsunred;
+        background: $siouxundocumentedgrey;
     }
 }
 
+#documenter .docs-sidebar ul.docs-menu .tocitem {
+    border: 1px solid $mainwhite;
+}
+
 #documenter .docs-sidebar ul.docs-menu ul.internal {
-    margin: 0 0.5rem 0.5rem;
-    border-top: none;
+    margin: 0;
+    border: none;
 }
 
-#documenter .docs-sidebar {
-    border-right: 3px solid black;
+#documenter .docs-sidebar ul.docs-menu ul.internal li {
+    margin: 0;
 }
 
-#documenter .docs-sidebar ul.docs-menu li.is-active {
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
+#documenter .docs-sidebar ul.docs-menu ul.internal .tocitem {
+    width: 100%;
+    padding: 0.5rem;
 }
 
-#documenter .docs-sidebar ul.docs-menu {
-    border-top: 1px solid black;
+#documenter .docs-sidebar ul.docs-menu li.is-active  {
+    border: none;
 }
