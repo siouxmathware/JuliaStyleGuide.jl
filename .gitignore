@@ -3,4 +3,7 @@ dev
 
 # Ignore build of the docs
 docs/build
+## This is an auto-generated "intermediate" file
 **/julia_for_numpy_users.md
+## This is an auto-generated "intermediate" file
+docs/src/assets/themes/documenter-light.css
