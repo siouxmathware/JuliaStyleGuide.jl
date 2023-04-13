@@ -26,4 +26,4 @@ makedocs(;
     ],
 )
 
-deploydocs(; repo="github.com/siouxmathware/JuliaStyleGuide.jl.git", devbranch="housestyle")
+deploydocs(; repo="github.com/siouxmathware/JuliaStyleGuide.jl.git", devbranch="gentler-housestyle")

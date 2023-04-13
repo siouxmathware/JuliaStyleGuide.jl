@@ -3,7 +3,7 @@ name: Documentation
 on:
   push:
     branches:
-      - housestyle
+      - gentler-housestyle
     tags: '*'
   pull_request:
 
