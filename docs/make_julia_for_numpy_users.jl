@@ -193,6 +193,19 @@ tensor_create_table = TableMaker.ComparisonTable(
         ),
         (
             p="""
+            np.hstack((a, b, ...))  # or
+            np.concatenate((a, b, ...), 1)
+            """, 
+            j="""
+            reduce(hcat, [a, b, ...]) 
+            """, 
+            n="""
+            concatenate columns of many arrays
+            In Julia, "reduce(hcat, [a, b, ...])" calls a more efficient method for concatenating many arrays.
+            """
+        ),
+        (
+            p="""
             np.vstack((a, b))  # or
             np.concatenate((a, b))
             """, 
@@ -203,6 +216,19 @@ tensor_create_table = TableMaker.ComparisonTable(
             """, 
             n="""
             concatenate rows of a and b"""
+        ),
+        (
+            p="""
+            np.vstack((a, b, ...))  # or
+            np.concatenate((a, b, ...), 1)
+            """, 
+            j="""
+            reduce(vcat, [a, b, ...]) 
+            """, 
+            n="""
+            concatenate rows of many arrays
+            In Julia, "reduce(vcat, [a, b, ...])" calls a more efficient method for concatenating many arrays.
+            """
         ),
         (p="np.arange(1., 11.)", j="1:10", n="create an increasing vector"),
         (p="np.arange(10.)", j="0:10", n="create an increasing vector"),
