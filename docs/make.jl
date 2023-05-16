@@ -1,15 +1,18 @@
 using JuliaStyleGuide
 using Documenter
+using DocumenterTools: Themes
+
+include("make_julia_for_numpy_users.jl")
+
+Themes.compile(joinpath(@__DIR__,"src/assets/light.scss"), joinpath(@__DIR__,"src/assets/themes/documenter-light.css"))
 
 makedocs(;
     clean=true,
     modules=[JuliaStyleGuide],
-    repo="https://bitbucket.org/limebv/project/juliastyleguide.jl/{commit}/{path}#lines-{line}",
+    repo="github.com/siouxmathware/JuliaStyleGuide.jl/{commit}/{path}#lines-{line}",
     sitename="JuliaStyleGuide.jl",
-    format=Documenter.HTML(
-        prettyurls=!("local" in ARGS),
-        canonical="",
-        edit_link="master"
+    format=Documenter.HTML(;
+        prettyurls=!("local" in ARGS), canonical="", edit_link="master"
     ),
     pages=[
         "Home" => "index.md",
@@ -19,9 +22,8 @@ makedocs(;
         "Nested Include" => "nested_includes.md",
         "Types and Their Methods" => "types_and_their_methods.md",
         "Docstrings" => "docstrings.md",
-    ]
+        "Julia for Numpy users" => "julia_for_numpy_users.md",
+    ],
 )
 
-deploydocs(
-    repo = "github.com/siouxmathware/JuliaStyleGuide.jl.git",
-)
+deploydocs(; repo="github.com/siouxmathware/JuliaStyleGuide.jl.git", devbranch="gentler-housestyle")
